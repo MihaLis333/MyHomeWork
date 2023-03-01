@@ -46,23 +46,22 @@ Console.WriteLine($"{Math.Sqrt(ac + bc + zz)}"); */
 12821 -> да
 23432 -> да */
 
-Console.Write("Input five-digit number: ");
+/*Console.Write("Input five-digit number: ");
 int num = int.Parse(Console.ReadLine());
 
+int num5 = num % 10;
+int num4 = num % 100 / 10;
+int num2 = num / 1000 % 10; 
+int num1 = num / 10000; 
 
-int num4 = num % 10;
-int num3 = num % 10 / 10;
-int num2 = num / 100 % 10; // в этих переменных я выделил последние 3 цифры с конца
-int revers =  // пока не пойму что сюда писать
 
-
-if (num == revers)
+if (num1 == num5 && num2 == num4)
 {
-    Console.WriteLine(num4);
+   Console.WriteLine("Palindrom"); 
 }
 else
 {
-   Console.WriteLine(" Not Palindrom");
-}
+  Console.WriteLine("Not Palindrom");
+} */
 
 
