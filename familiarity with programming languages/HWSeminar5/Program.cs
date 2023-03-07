@@ -22,9 +22,14 @@ void PrintArray(int[] inArray)
 }
 void EvenNumbers(int[] inArray)
 {
-    for(int index = 0; index < inArray.Length / 2; index++)
+    int count = 0;
+    for(int index = 0; index < inArray.Length; index++)
     {
-            Console.Write($"{inArray[index]} "); // выводит на оборот те что не деляться на 2!
+        if(inArray[index] % 2 == 0)
+        {
+            count++;
+        }
+        Console.Write($"{count} ");
     }
 }
 int[] iArray = FillArray(4);
