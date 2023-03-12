@@ -5,7 +5,7 @@
 
 /*int[] FillArray (int Array)
 {
-    int[] res = new int[Array];
+int[] res = new int[Array];
     for (int i = 0; i < Array; i++)
     {
         res[i] = new Random().Next(100, 999);
@@ -13,17 +13,17 @@
     }
     return res;
 }
-void PrintArray(int[] inArray)
+void PrintArray (int[] inArray)
 {
-    for(int ind = 0; ind < inArray.Length; ind++)
+    for (int ind = 0; ind < inArray.Length; ind++)
     {
         Console.Write($"{inArray[ind]} ");
     }
 }
-void EvenNumbers(int[] inArray)
+void EvenNumbers (int[] inArray)
 {
-    int count = 0;
-    for(int index = 0; index < inArray.Length; index++)
+int count = 0;
+    for (int index = 0; index < inArray.Length; index++)
     {
         if(inArray[index] % 2 == 0)
         {
@@ -45,7 +45,7 @@ EvenNumbers(iArray); */
 
 /*int[] FillArray (int Array)
 {
-    int[] res = new int[Array];
+int[] res = new int[Array];
     for (int i = 0; i < Array; i++)
     {
         res[i] = new Random().Next(1, 10);
@@ -55,16 +55,16 @@ EvenNumbers(iArray); */
 }
 void PrintArray (int[] pArray)
 {
-    for(int pi = 0; pi < pArray.Length; pi++)
+    for (int pi = 0; pi < pArray.Length; pi++)
     {
         Console.Write($"{pArray[pi]} ");
     }
 }
 
-void SumElements(int[] sArray)
+void SumElements (int[] sArray)
 {
-    int numodd = 0;
-    int numeven = 0;
+int numodd = 0;
+int numeven = 0;
     foreach (int element in sArray)
     {
         if (element % 2 != 0)
@@ -78,7 +78,6 @@ void SumElements(int[] sArray)
     }
     Console.WriteLine($"{numodd}");
 }
-
 int[] array = FillArray(4);
 PrintArray(array);
 Console.WriteLine();
@@ -91,4 +90,39 @@ SumElements(array); */
 [3 7 22 2 78] -> 76 
 */
 
+int[] FillArray (int fArray)
+{
+int[] res = new int[fArray];
+    for (int i = 0; i < fArray; i++)
+    {
+        res[i] = new Random(). Next (1, 99);
+    }
+    return res;
+}
 
+void PrintArray (int[] pArray)
+{
+    for (int pI = 0; pI < pArray.Length; pI++)
+    {
+        Console.Write($"{pArray[pI]} ");
+    }
+}
+
+void DiffElement (int[] dElement)
+{
+    int maxNum = 0;
+    //int minNum = 1;
+    for (int dI = 0; dI < dElement.Length; dI++)
+    {
+        if (dElement[dI] > maxNum) maxNum = dElement[dI];
+        {
+            maxNum++;
+        }
+    }
+    Console.Write($"{maxNum}");
+}
+
+int[] Array = FillArray(5);
+PrintArray(Array); 
+Console.WriteLine();
+DiffElement(Array);
