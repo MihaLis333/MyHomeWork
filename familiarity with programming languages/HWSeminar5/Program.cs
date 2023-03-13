@@ -95,7 +95,7 @@ int[] FillArray (int fArray)
 int[] res = new int[fArray];
     for (int i = 0; i < fArray; i++)
     {
-        res[i] = new Random(). Next (1, 99);
+        res[i] = new Random(). Next (1, 10);
     }
     return res;
 }
@@ -111,15 +111,18 @@ void PrintArray (int[] pArray)
 void DiffElement (int[] dElement)
 {
     int maxNum = 0;
+    //int index = 0;
     //int minNum = 1;
     for (int dI = 0; dI < dElement.Length; dI++)
     {
-        if (dElement[dI] > maxNum) maxNum = dElement[dI];
+        if (dElement[dI] > maxNum) 
         {
-            maxNum++;
+             maxNum = dElement[dI];
         }
+        Console.WriteLine($"{maxNum}");
     }
-    Console.Write($"{maxNum}");
+   
+   
 }
 
 int[] Array = FillArray(5);
