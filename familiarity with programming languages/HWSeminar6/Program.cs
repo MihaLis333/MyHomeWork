@@ -5,21 +5,21 @@
 1, -7, 567, 89, 223-> 3
 */
 
-int[] Main(string[] args)
+/*double[] GetArray()
 {
     Console.Write("Input element array: ");
 
-    int elementCount = int.Parse(Console.ReadLine());
+    double elementCount = double.Parse(Console.ReadLine());
 
-    int[] MArray = new int [elementCount];
+    double[] MArray = new double [elementCount];
 
-    for (int i =0; i < MArray.Length; i++)
+    for (double i =0; i < MArray.Length; i++)
     {
         Console.Write($"\nInput element array in index {i}:\t ");
-        MArray[i] = int.Parse(Console.ReadLine());
+        MArray[i] = double.Parse(Console.ReadLine());
     }
 
-    for(int i = 0; i < MArray.Length; i++)
+    for(double i = 0; i < MArray.Length; i++)
     {
         
         Console.Write($"\n{MArray[i]}");
@@ -27,18 +27,40 @@ int[] Main(string[] args)
     return MArray;
 }
 
-void OutNum(string num)
+void OutNum(double[] numbers)
 { 
-    int n = Convert.ToInt32(num);
-    int[] OArray = new int[n];
+    double count = 0;
 
-    for(int i =0; i < OArray.Length; i++)
+    for(double i =0; i < numbers.Length; i++)
     {
-        if(OArray[i] > 0)
+        if(numbers[i] > 0)
         {
-            Console.Write(OArray[i]);
-        }
+            count++;   
+        }       
     }
+     Console.Write($"{count}");
 } 
-Main(args);
-OutNum(args);
+double[] array = GetArray();
+Console.WriteLine();
+OutNum(array); */
+
+/*
+Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, 
+заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 
+задаются пользователем.
+b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+*/
+
+void LinePoint(double b1, double k1, double b2, double k2)
+{
+    double x = (-b2 + b1)/(-k1 + k2);
+    double y = k2 * x + b2;
+
+    Console.WriteLine($"two lines intersect X: {x}, Y: {y}");
+}
+Console.WriteLine("Input foure line point");
+double num1 = double.Parse(Console.ReadLine());
+double num2 = double.Parse(Console.ReadLine());
+double num3 = double.Parse(Console.ReadLine());
+double num4 = double.Parse(Console.ReadLine());
+LinePoint(num1, num2, num3, num4);
