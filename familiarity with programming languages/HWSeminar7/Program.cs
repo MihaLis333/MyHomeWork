@@ -76,9 +76,9 @@ void SearhElement(int[,] sArray)
     {
         for(int cj =0; cj < sArray.GetLength(1); cj++) 
         {
-            if(ri == rows || cj == columns)
+            if(ri == rows && cj == columns)
             {
-               Console.WriteLine($"{sArray[ri, cj]} ");//=  (rows, columns);
+               Console.WriteLine($"{sArray[ri, cj]}");//=  (rows, columns);
             }
             else
             {
