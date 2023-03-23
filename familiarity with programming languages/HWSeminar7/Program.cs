@@ -69,35 +69,88 @@ void PrintArray(int[,] pArray)
     }
 }
 
-void SearhElement(int[,] sArray)
+int SearhElement(int[,] sArray)
 {
-    //int result =0;
+    int result =0;
     for(int ri =0; ri < sArray.GetLength(0); ri++) 
     {
         for(int cj =0; cj < sArray.GetLength(1); cj++) 
         {
             if(ri == rows && cj == columns)
             {
-               Console.WriteLine($"{sArray[ri, cj]}");//=  (rows, columns);
+               result = sArray[ri, cj];//Console.WriteLine($"{sArray[ri, cj]}");//=  (rows, columns);
             }
-            else
-            {
-                Console.WriteLine("There is no such number in the array");
-            }
+            
         }
     }
-    //return result;
-
+    return result;
+    Console.WriteLine("There is no such number in the array");
 }
 
 
 int[,] array = GetArray(4, 4);
 PrintArray(array);
 Console.WriteLine();
-SearhElement(array);
-//Console.WriteLine($"{SearhElement(array)}");
+//SearhElement(array); 
+Console.WriteLine($"{SearhElement(array)}");
 
 
+/*
+Задача 52. Задайте двумерный массив из целых чисел. 
+Найдите среднее арифметическое элементов в каждом столбце.
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+*/
 
 
+/*int[,] GetArray(int r, int c)
+{
+    int[,] result =new int[r, c];
+    for(int i =0; i< r; i++)
+    {
+        for(int j=0; j< c; j++)
+        {
+            result[i, j] = new Random().Next(1, 10);
+            //Console.Write($"{result[i, j]} ");
+        }
+        //Console.WriteLine();
+    }
+    return result;
+}
 
+void PrintArray(int[,] pArray)
+{
+    for(int i =0; i< pArray.GetLength(0); i++)
+    {
+        for(int j=0; j< pArray.GetLength(1); j++)
+        { 
+          Console.Write($"{pArray[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int AverageArray(int[,] aArray)
+{
+    int sum = 0;
+    for(int ri =0; ri < aArray.GetLength(0); ri++)
+    {
+        for(int cj =0; cj < aArray.GetLength(1); cj++)
+        {
+            if(cj == cj)
+            {
+                sum = sum + aArray[ri, cj];
+            }   
+        }
+    }
+    return sum;
+}
+
+
+int[,] array = GetArray(4, 4);
+PrintArray(array);
+Console.WriteLine();
+Console.WriteLine($"{AverageArray(array)}"); */
