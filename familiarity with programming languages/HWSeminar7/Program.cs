@@ -34,7 +34,7 @@ double[,] array = GetArray(4, 4); */
 [1,7] -> по данным индексам такого числа в массиве нет
 */
 
-Console.Write("Enter the position element of rows: ");
+/*Console.Write("Enter the position element of rows: ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter the position element of columns: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -76,7 +76,7 @@ void PrintArray(int[,] array)
         Console.Write("]");
         Console.WriteLine(""); 
     }
-}
+} */
 
 /*
 Задача 52. Задайте двумерный массив из целых чисел. 
@@ -88,7 +88,7 @@ void PrintArray(int[,] array)
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
 
-/*int[,] GetArray(int r, int c)
+int[,] GetArray(int r, int c)
 {
     int[,] result =new int[r, c];
     for(int i =0; i< r; i++)
@@ -115,24 +115,25 @@ void PrintArray(int[,] pArray)
     }
 }
 
-int AverageArray(int[,] aArray)
+void AverageArray(int[,] aArray)
 {
-    int sum = 0;
-    for(int ri =0; ri < aArray.GetLength(0); ri++)
+    //int[,] num = new int[r, c];
+    //int sum = 0;
+    for(int cj =0; cj < aArray.GetLength(1); cj++)
     {
-        for(int cj =0; cj < aArray.GetLength(1); cj++)
+        double sum =0;
+        for(int ri =0; ri < aArray.GetLength(0); ri++)
         {
-            if(cj == cj)
-            {
-                sum = sum + aArray[ri, cj];
-            }   
+            sum = sum + aArray[ri, cj];   
         }
+        sum = sum / aArray.GetLength(1);//aArray.GetLength(1);
+        Console.Write(sum + ", ");
     }
-    return sum;
+
 }
 
 
 int[,] array = GetArray(4, 4);
 PrintArray(array);
 Console.WriteLine();
-Console.WriteLine($"{AverageArray(array)}"); */
+AverageArray(array);
