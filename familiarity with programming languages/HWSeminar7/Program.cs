@@ -34,66 +34,49 @@ double[,] array = GetArray(4, 4); */
 [1,7] -> по данным индексам такого числа в массиве нет
 */
 
-
 Console.Write("Enter the position element of rows: ");
-int rows = int.Parse(Console.ReadLine());
-
+int n = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter the position element of columns: ");
-int columns = int.Parse(Console.ReadLine());
-
-
-int[,] GetArray(int r, int c)
-{
-    int[,] result =new int[r, c];
-    for(int i =0; i< r; i++)
-    {
-        for(int j=0; j< c; j++)
-        {
-            result[i, j] = new Random().Next(1, 10);
-            //Console.Write($"{result[i, j]} ");
-        }
-        //Console.WriteLine();
-    }
-    return result;
-}
-
-void PrintArray(int[,] pArray)
-{
-    for(int i =0; i< pArray.GetLength(0); i++)
-    {
-        for(int j=0; j< pArray.GetLength(1); j++)
-        { 
-          Console.Write($"{pArray[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
-
-int SearhElement(int[,] sArray)
-{
-    int result =0;
-    for(int ri =0; ri < sArray.GetLength(0); ri++) 
-    {
-        for(int cj =0; cj < sArray.GetLength(1); cj++) 
-        {
-            if(ri == rows && cj == columns)
-            {
-               result = sArray[ri, cj];//Console.WriteLine($"{sArray[ri, cj]}");//=  (rows, columns);
-            }
-            
-        }
-    }
-    return result;
-    Console.WriteLine("There is no such number in the array");
-}
-
-
-int[,] array = GetArray(4, 4);
-PrintArray(array);
+int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
-//SearhElement(array); 
-Console.WriteLine($"{SearhElement(array)}");
+int [,] numbers = new int [4,4];
+FillArrayRandomNumbers(numbers);
 
+if (n > numbers.GetLength(0) && m > numbers.GetLength(1))
+{
+    Console.WriteLine(" ----> No such position. ");
+}
+else
+{
+    Console.WriteLine($" ----> Element value {n} string and {m} column equals {numbers[n-1,m-1]}. ");
+}
+
+PrintArray(numbers);
+
+void FillArrayRandomNumbers(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+        {        
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                array [i,j] = new Random().Next(1, 10);
+            }   
+        }
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write("[ ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + " ");
+        }   
+        Console.Write("]");
+        Console.WriteLine(""); 
+    }
+}
 
 /*
 Задача 52. Задайте двумерный массив из целых чисел. 
@@ -104,7 +87,6 @@ Console.WriteLine($"{SearhElement(array)}");
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 */
-
 
 /*int[,] GetArray(int r, int c)
 {
